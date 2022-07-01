@@ -17,7 +17,7 @@
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light ">
       <div class="container-fluid">
-        <a id="logo" class="navbar-brand" href="#"><img src="images/Swecha.png" height="50px" alt="Swecha"></a>
+        <a id="logo" class="navbar-brand" href="https://www.swecha.org/"><img src="images/Swecha.png" height="50px" alt="Swecha"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -179,36 +179,36 @@
 
     <br>
 
-    <div class="row ">
-      <div class="col-lg-6 col-md-6 issuedescription">
+    <% issues.forEach(function(issue) { %>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 issuedescription">
 
 
-      <h4>Complaint 4</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nulla tortor arcu, dignissim tristique massa sit amet,
-        venenatis vestibulum est. Sed at sollicitudin nisl.
-        Sed aliquet sem sed purus efficitur, id efficitur nunc finibus.
-        Proin eget consectetur libero, nec sollicitudin tellus. Donec at varius erat.
-        Maecenas tincidunt risus eu ipsum venenatis, eu lacinia dui lacinia.
-        Sed sagittis feugiat enim ac sollicitudin. Nunc hendrerit faucibus metus eu cursus</p>
+        <h4><%= issue.ProblemType %></h4>
+        <p><%= issue.IssueDesc %></p>
 
-        </div>
+          </div>
 
-        <div class="col-lg-5 col-md-5 issueimage">
-          <img src="images/potholes.png" height="250px" width="400px" alt="">
+          <div class="col-lg-5 col-md-5 issueimage">
+            <img src="data:issue/<%=issue.img.contentType%>;base64,
+					<%=issue.img.data.toString('base64')%>" height="250px" width="400px" alt="">
 
-        </div>
+          </div>
 
-        <div class="col-lg-1 col-md-1 status">
-          <center>
-            <h6 class="statusInfo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-              </svg></h6>
-          </center>
+          <div class="col-lg-1 col-md-1 status">
+            <center>
+              <h6 class="statusInfo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg></h6>
+            </center>
 
-        </div>
+          </div>
 
-    </div>
+      </div>
+      <br>
+  <%  })    %>
+
+
     <br>
 
     <center>

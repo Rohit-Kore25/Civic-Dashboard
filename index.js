@@ -46,11 +46,18 @@ const upload = multer({storage:storage});
 
 //The gets:
 app.get("/areawisecomplaints",function(req,res){
-  res.render("areacomplaints");
+  Issue.find({},function(err,foundissues){
+    res.render("areacomplaints",{issues:foundissues});
+    //console.log(foundissues);
+  });
+
 });
 
 app.get("/localcomplaints",function(req,res){
-  res.render("localcomplaints");
+  Issue.find({},function(err,foundissues){
+    res.render("localcomplaints",{issues:foundissues});
+  });
+  // res.render("localcomplaints");
 });
 
 app.get("/reportproblem",function(req,res){
@@ -74,6 +81,8 @@ app.post("/reportproblem",upload.single('image'),function(req,res){
   });
 
   issueToAdd.save();
+
+  res.redirect("/areawisecomplaints");
 });
 
 app.listen(process.env.PORT || 3000,function(){

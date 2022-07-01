@@ -55,16 +55,16 @@
       </div>
 
       <div class="col-lg-6">
-        <form action="/" method="post">
+        <form action="/reportproblem" method="post" enctype="multipart/form-data">
           <div class="row">
             <div class="col-lg-6 ">
               <label for="Name" class="form-label">Name</label>
-              <input type="text" class="form-control" placeholder="Name">
+              <input type="text" name="name" class="form-control" placeholder="Name">
 
             </div>
             <div class="col-lg-6 ">
               <label for="Location" class="form-label">Location</label>
-              <input type="text" class="form-control" placeholder="Location">
+              <input type="text" name="location" class="form-control" placeholder="Location">
             </div>
           </div>
 
@@ -73,12 +73,12 @@
           <div class="row ">
             <div class="col-lg-6 ">
               <label for="Date" class="form-label">Date</label>
-              <input type="date" class="form-control">
+              <input type="date" name="date" class="form-control">
 
             </div>
             <div class="col-lg-6 ">
               <label for="PhoneNumber" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" placeholder="Phone Number">
+              <input type="number" name="phonenum" class="form-control" placeholder="Phone Number">
             </div>
           </div>
 
@@ -90,7 +90,7 @@
             <div class="col-lg-12 ">
               <label style = "margin-bottom:10px; margin-left:45%" for="lang">Problem</label>
               <br>
-              <select class="dropdown1 " name="languages" id="lang">
+              <select class="dropdown1 " name="probtype" id="lang">
                 <option value="Potholes">Potholes</option>
                 <option value="Graffiti">Graffiti</option>
                 <option value="Street Lighting">Street Lighting</option>
@@ -104,7 +104,7 @@
           <div class="row">
             <div class="col-lg-12 ">
               <label style = "margin-bottom:10px; margin-left:42%" for="formFile" class="form-label">Upload image</label>
-              <input class="form-control" type="file" id="formFile">
+              <input class="form-control" name="image" type="file" id="formFile">
             </div>
           </div>
 
@@ -113,7 +113,7 @@
           <div class="row">
             <div class="col-lg-12 ">
               <label style = "margin-bottom:10px; margin-left:40%" for="issueDescription">Describe your issue </label>
-              <textarea style = "resize:none" class="form-control"  name="w3review" rows="4" cols="50" placeholder="Describe your issue"></textarea>
+              <textarea style = "resize:none" class="form-control"  name="desc" rows="4" cols="50" placeholder="Describe your issue"></textarea>
             </div>
 
 

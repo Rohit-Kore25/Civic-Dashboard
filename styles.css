@@ -1,0 +1,122 @@
+/*local complaints.html css*/
+
+.heading{
+  margin-top: 30px
+}
+
+
+
+.searchInput{
+  width: 50%;
+}
+
+.status{
+  text-align: center;
+}
+
+.statusInfo{
+  margin: 20px;
+  display: inline-block;
+}
+
+.footer{
+  text-align: center;
+  margin:0 20% 0 20%;
+}
+
+#logo{
+  color: Orange;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#footerRow{
+  width:50%;
+  text-align:center;
+  margin-left:25%;
+  height:2px;
+}
+
+.btn1{
+  height: 37px;
+  border: 0;
+  border-radius: 4px;
+}
+
+/* Recent Issues css */
+
+
+
+
+
+
+
+
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+
+/*main css*/
+
+.bgred{
+  height: 100px;
+  background-color: red;
+}
+
+.bgblue{
+  height: 100px;
+  background-color: blue;
+}
+
+.bggreen{
+  height: 100px;
+  background-color: green;
+}
+
+.bgyellow{
+  height: 100px;
+  background-color: yellow;
+}
+
+.Rules{
+  padding: 0 30px;
+}
+
+.dropdown1{
+  height: 40px;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 23px;
+}
+/* .mb3{
+  display: inline-block;
+} */
+
+/*Areawise complains css*/
+.dropdown{
+  margin-top: 15%;
+}
+
+.issuedescription{
+  padding-left: 60px;
+}
+
+.issueimage{
+  text-align: center;
+}
+
+.issue{
+  margin-bottom: 70px;
+}
+
+.status{
+  padding-right: 2%;
+  padding-top: 7%;
+}

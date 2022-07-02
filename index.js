@@ -1,5 +1,6 @@
 //jshint esversion:6
 
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
@@ -7,6 +8,11 @@ const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
 const multer = require('multer');
+
+const session = require('express-session');
+const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
+
 require('dotenv/config');
 
 const app = express();
@@ -20,7 +26,7 @@ mongoose.connect("mongodb://localhost:27017/civicdashboardDB");
 const issueSchema = new mongoose.Schema({
   Name:String,
   Location:String,
-  Date:Date,
+  Date:String,
   PhoneNum:Number,
   ProblemType:String,
   img:
@@ -45,9 +51,13 @@ const storage = multer.diskStorage({
 const upload = multer({storage:storage});
 
 //The gets:
+app.get("/",function(req,res){
+  res.render("home",{title:"home"});
+});
+
 app.get("/areawisecomplaints",function(req,res){
   Issue.find({},function(err,foundissues){
-    res.render("areacomplaints",{issues:foundissues});
+    res.render("areacomplaints",{issues:foundissues,title:"areawisecomplaints"});
     //console.log(foundissues);
   });
 
@@ -55,17 +65,28 @@ app.get("/areawisecomplaints",function(req,res){
 
 app.get("/localcomplaints",function(req,res){
   Issue.find({},function(err,foundissues){
-    res.render("localcomplaints",{issues:foundissues});
+    res.render("localcomplaints",{issues:foundissues,title:"localcomplaints"});
+
   });
   // res.render("localcomplaints");
 });
 
 app.get("/reportproblem",function(req,res){
-  res.render("reportprob");
+  res.render("reportprob",{title:"Report Problem"});
+});
+
+app.get("/login",function(req,res){
+  res.render("login",{title:"login"});
+});
+
+app.get("/register",function(req,res){
+  res.render("register",{title:"signup"});
 });
 
 //The posts:
 app.post("/reportproblem",upload.single('image'),function(req,res){
+
+
 
   const issueToAdd = new Issue({
     Name:req.body.name,

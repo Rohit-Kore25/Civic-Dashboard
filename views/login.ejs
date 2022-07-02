@@ -1,0 +1,93 @@
+
+
+
+
+<%- include('partials/header') %>
+
+<br><br><br><br>
+
+
+
+<div class="container">
+
+<div class="row loginimg">
+
+<div class="col-lg-6 ">
+  <center>
+  <img style="margin-top:50px;" src="images/swecha.png" alt="">
+  </center>
+
+</div>
+
+
+<div class="col-lg-5  logindetails">
+
+<h3 style="text-align:center; margin-bottom:20px; font-style:italic;">Log in</h3>
+
+<form>
+  <center>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input style="width:70%" type="email" class="form-control" id="exampleInputEmail1" placeholder="jerry@gmail.com">
+
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input style="width:70%" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password">
+  </div>
+
+  <button type="submit" class="btn btn-primary ">Submit</button>
+  <br>
+  <br>
+  Dont have an accout? <a href="/register">Sign Up</a>
+  <hr style="width:50%">
+  </center>
+</form>
+
+<div class="row">
+
+
+
+  <h5 style="text-align:center">OR</h5><br><br>
+
+  <div class="col-lg-6 col-md-6">
+  <div class="card logincard">
+        <div class="card-body">
+          <a class="btn btn-block" href="/auth/google" role="button">
+            <i style="color:red" class="fab fa-google"></i>
+            <p style="color:white; display:inline">Sign In with Google</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+     <br><br>
+
+
+    <div class="col-lg-6 col-md-6">
+    <div class="card logincard">
+          <div class="card-body">
+            <a class="btn btn-block" href="/auth/google" role="button">
+              <i style="color:blue" class="fab fa-facebook"></i>
+              <p style="color:white; display:inline">Sign In with Facebook</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<br><br>
+
+
+<%- include('partials/footer') %>

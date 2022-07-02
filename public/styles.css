@@ -120,3 +120,42 @@ input[type=number]::-webkit-outer-spin-button {
   padding-right: 2%;
   padding-top: 7%;
 }
+
+/*home page css*/
+
+.homeWelcome{
+  padding: 10%;
+}
+
+.homebtn{
+  margin-top: 30px;
+  background-color: black;
+  color: white;
+  border: 0;
+  text-align: center;
+  height: 50px;
+  border-radius:1%;
+  font-size: 20px;
+  padding-left:20px;
+  padding-right: 20px;
+  width:95%;
+}
+
+.homebtn:hover{
+  background-color: darkgrey;
+}
+
+/*login ka css*/
+
+.logindetails{
+  border: 1px solid grey;
+  padding: 15px;
+}
+
+.logincard{
+  background-color: black;
+}
+
+.logincard:hover{
+  background-color: grey;
+}

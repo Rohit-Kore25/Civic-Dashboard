@@ -19,7 +19,7 @@
       </div>
 
       <div class="col-lg-6">
-        <form action="/reportproblem" method="post" enctype="multipart/form-data">
+        <form class="needs-validation" action="/reportproblem" method="post" enctype="multipart/form-data" novalidate>
           <div class="row">
             <div class="col-lg-6 ">
               <label for="Name" class="form-label">Name</label>
@@ -54,11 +54,12 @@
             <div class="col-lg-12 ">
               <label style = "margin-bottom:10px; margin-left:45%" for="lang">Problem</label>
               <br>
-              <select class="dropdown1 " name="probtype" id="lang">
+              <select class="dropdown1 form-control" name="probtype"  required>
                 <option value="Potholes">Potholes</option>
                 <option value="Graffiti">Graffiti</option>
                 <option value="Street Lighting">Street Lighting</option>
                 <option value="Traffic Lights">Traffic Lights</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
@@ -100,7 +101,6 @@
     <br>
     <br>
 
+    <script src="functions.js" charset="utf-8"></script>
+
     <%- include('partials/footer') %>
-
-
-</body>

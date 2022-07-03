@@ -24,17 +24,21 @@
 
 <h3 style="text-align:center; margin-bottom:20px; font-style:italic;">Log in</h3>
 
-<form>
+<form class="needs-validation" action="/login" method="post" novalidate>
   <center>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input style="width:70%" type="email" class="form-control" id="exampleInputEmail1" placeholder="jerry@gmail.com">
+    <input style="width:70%" type="email" name="username" class="form-control" id="exampleInputEmail1" placeholder="jerry@gmail.com" required>
 
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input style="width:70%" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password">
+    <input style="width:70%" type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password" required>
   </div>
+
+  <% if(!status){ %>
+    <p style="color:red">Incorrect Username or Password</p>
+    <% } %>
 
   <button type="submit" class="btn btn-primary ">Submit</button>
   <br>
@@ -89,5 +93,6 @@
 
 <br><br>
 
+<script src="functions.js" charset="utf-8"></script>
 
 <%- include('partials/footer') %>

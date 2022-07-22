@@ -25,7 +25,6 @@ app.use(session({
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
-  // cookie: { secure: true }
 }));
 
 app.use(passport.initialize());
@@ -86,9 +85,9 @@ app.get("/",function(req,res){
   res.render("home",{title:"home"});
 });
 
-app.get("/areawisecomplaints",function(req,res){
+app.get("/allcomplaints",function(req,res){
   Issue.find({},function(err,foundissues){
-    res.render("areacomplaints",{issues:foundissues,title:"areawisecomplaints"});
+    res.render("allcomplaints",{issues:foundissues,title:"All complaints"});
     //console.log(foundissues);
   });
 
@@ -141,7 +140,7 @@ app.post("/reportproblem",upload.single('image'),function(req,res){
 
   issueToAdd.save();
 
-  res.redirect("/areawisecomplaints");
+  res.redirect("/allcomplaints");
 });
 
 app.post("/register",function(req,res){
